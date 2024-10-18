@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ssh.cyrhades.fr:
+    build: ssh
+  webssh.cyrhades.fr:
+    build: webssh
+    ports:
+    - ${PORT}:8888
+  guess-me-too.cyrhades.fr:
+    image: anssi/fcsc2022-misc-guess-me-too:latest
+    ports:
+      - ${PORT_SSH}:4000
